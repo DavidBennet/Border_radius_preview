@@ -2,10 +2,10 @@ import { useState } from 'react'
 import './App.css'
 
 export function App() {
-  const [topLeft, setTopLeft] = useState('0')
-  const [topRight, setTopRight] = useState('0')
-  const [bottomRight, setBottomRight] = useState('0')
-  const [bottomLeft, setBottomLeft] = useState('0')
+  const [topLeft, setTopLeft] = useState(0)
+  const [topRight, setTopRight] = useState(0)
+  const [bottomRight, setBottomRight] = useState(0)
+  const [bottomLeft, setBottomLeft] = useState(0)
 
   return (
     <div className='All-Body'>
@@ -55,7 +55,14 @@ export function App() {
           onChange={(e) => setBottomLeft(e.target.value)}
         />
       </div>
-
+      
+      <pre 
+        aria-label='Code'
+        title='Copiar' 
+        onClick={() => navigator.clipboard.writeText(`border-radius: ${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px`)}>
+        {`border-radius: ${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px`}
+      </pre>       
+              
     </div>
   )
 }
